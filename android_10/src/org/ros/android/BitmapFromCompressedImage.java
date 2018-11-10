@@ -30,6 +30,8 @@ public class BitmapFromCompressedImage implements
   public Bitmap call(sensor_msgs.CompressedImage message) {
     ChannelBuffer buffer = message.getData();
     byte[] data = buffer.array();
+
+
     return BitmapFactory.decodeByteArray(data, buffer.arrayOffset(), buffer.readableBytes());
   }
 }

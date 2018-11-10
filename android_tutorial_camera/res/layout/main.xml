@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    <android.opengl.GLSurfaceView
+        android:layout_width="1280px"
+        android:layout_height="960px"
+        android:id="@+id/glSurfaceView"
 
-    <org.ros.android.view.camera.RosCameraPreviewView
-        android:id="@+id/ros_camera_preview_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        />
+    <org.ros.android.android_tutorial_camera.RosView
+        android:id="@+id/ros_view"
+        android:layout_width="1280px"
+        android:layout_height="960px"
+        />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+</FrameLayout>

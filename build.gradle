@@ -15,11 +15,17 @@
  */
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "3.5.1"
+    gradleVersion = "4.4"
 }
 
 buildscript {
     apply from: project.file("buildscript.gradle")
+    repositories {
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
 }
 
 apply plugin: "catkin"
@@ -82,3 +88,10 @@ configure(subprojects.findAll { it.name.startsWith("android_") }) {
 }
 
 defaultTasks 'assembleRelease', 'uploadArchives'
+
+repositories {
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}

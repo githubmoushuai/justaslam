@@ -2,8 +2,8 @@ package org.ros.android.view.camera;
 
 import android.hardware.Camera.Size;
 
-interface RawImageListener {
+public interface RawImageListener {
 
-  void onNewRawImage(byte[] data, Size size);
+   void onNewRawImage(byte[] data, Size size);
 
 }

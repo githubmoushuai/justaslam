@@ -49,7 +49,7 @@ public class CameraPreviewView extends ViewGroup {
   private RawImageListener rawImageListener;
   private BufferingPreviewCallback bufferingPreviewCallback;
 
-  private final class BufferingPreviewCallback implements PreviewCallback {
+  public final class BufferingPreviewCallback implements PreviewCallback {
     @Override
     public void onPreviewFrame(byte[] data, Camera camera) {
       Preconditions.checkArgument(camera == CameraPreviewView.this.camera);
@@ -61,7 +61,7 @@ public class CameraPreviewView extends ViewGroup {
     }
   }
 
-  private final class SurfaceHolderCallback implements SurfaceHolder.Callback {
+  public final class SurfaceHolderCallback implements SurfaceHolder.Callback {
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
     }
@@ -142,7 +142,7 @@ public class CameraPreviewView extends ViewGroup {
   private void setupCameraParameters() {
     Camera.Parameters parameters = camera.getParameters();
     List<Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
-    previewSize = getOptimalPreviewSize(supportedPreviewSizes, getWidth(), getHeight());
+    previewSize = getOptimalPreviewSize(supportedPreviewSizes, 640,480 );
     parameters.setPreviewSize(previewSize.width, previewSize.height);
     parameters.setPreviewFormat(ImageFormat.NV21);
     camera.setParameters(parameters);

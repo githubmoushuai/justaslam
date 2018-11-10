@@ -23,7 +23,11 @@ include "android_tutorial_image_transport"
 include "android_tutorial_map_viewer"
 include "android_tutorial_pubsub"
 include "android_tutorial_teleop"
-include "docs"
+include "openCVLibrary320"
+
+include ':vecmath'
+
+project(':vecmath').projectDir = new File(rootProject.projectDir, './third_party/vecmath')
 
 // TODO(damonkohler): The following projects are not included in the
 // multi-project yet till its sorted whereabouts they should actually live

@@ -16,18 +16,22 @@
 
 dependencies {
   compile project(':android_10')
+  compile files('lib/commons-math3-3.6.1.jar')
+  compile project(':vecmath')
+  compile fileTree(dir: '../libs', include: ['*.aar'])
+    //compile project(':openCVLibrary320')
 }
 
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 25
+  compileSdkVersion 27
 
   defaultConfig {
-    minSdkVersion 10
+    minSdkVersion 24
     applicationId "org.ros.android.android_tutorial_camera"
-    targetSdkVersion 10
+    targetSdkVersion 27
     versionCode 1
-    versionName "1.0"
+    versionName "1.1"
   }
 }
